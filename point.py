@@ -1,14 +1,19 @@
 class Point:
-    pass
+    def reset(self):
+        self.x = 0
+        self.y = 0
 
-p1 = Point()
-p2 = Point()
+# calling the method on the object
+P = Point()
 
-p1.x = 5
-p1.y = 4
+P.reset()
 
-p2.x = 3
-p2.y = 6
+print(P.x, P.y)
 
-print(p1.x, p1.y)
-print(p2.x, p2.y)
+
+# invoke the function on the class
+p = Point()
+
+Point.reset(p)
+
+print(p.x, p.y)
