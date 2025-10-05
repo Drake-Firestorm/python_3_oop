@@ -1,5 +1,5 @@
 class Point:
-    def reset(self):
+    def reset():
         self.x = 0
         self.y = 0
 
