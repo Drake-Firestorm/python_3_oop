@@ -1,19 +1,29 @@
+import math
 class Point:
-    def reset():
-        self.x = 0
-        self.y = 0
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def reset(self):
+        self.move(0, 0)
+    
+    def calculate_distance(self, other_point):
+        return math.sqrt(
+            (self.x - other_point.x) ** 2
+            + (self.y - other_point.y) ** 2
+        )
 
-# calling the method on the object
-P = Point()
+# how to use it:
+point1 = Point()
+point2 = Point()
 
-P.reset()
+point1.reset()
+point2.move(5, 0)
 
-print(P.x, P.y)
+print(point2.calculate_distance(point1))
+assert point2.calculate_distance(point1) == point1.calculate_distance(point2)
 
+point1.move(3, 4)
 
-# invoke the function on the class
-p = Point()
-
-Point.reset(p)
-
-print(p.x, p.y)
+print(point1.calculate_distance(point2))
+print(point1.calculate_distance(point1))
